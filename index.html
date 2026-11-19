@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Gestión de Estudiantes</h1>
+
+        <!-- Contenedor para mensajes de éxito o error sin usar alert -->
+        <div id="mensaje" class="mensaje oculto"></div>
+
+        <!-- Formulario de Creación / Edición -->
+        <section class="form-section">
+            <h2 id="form-titulo">Registrar Nuevo Estudiante</h2>
+            <form id="student-form">
+                <input type="hidden" id="student-id">
+                
+                <div class="form-group">
+                    <label for="firstName">Nombre:</label>
+                    <input type="text" id="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Apellido:</label>
+                    <input type="text" id="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Edad:</label>
+                    <input type="number" id="age" min="0" max="120" required>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" id="btn-guardar" class="btn btn-primary">Guardar</button>
+                    <button type="button" id="btn-cancelar" class="btn btn-secondary oculto">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Tabla de Listado -->
+        <section class="table-section">
+            <h2>Lista de Estudiantes</h2>
+            <div style="margin-bottom: 15px;">
+                <input type="text" id="input-buscar" placeholder="Filtrar por apellido..." style="padding: 8px; width: 100%; max-width: 300px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="cursor: pointer;" onclick="ordenarTabla(0)">ID ↕</th>
+                        <th style="cursor: pointer;" onclick="ordenarTabla(1)">Nombre ↕</th>
+                        <th style="cursor: pointer;" onclick="ordenarTabla(2)">Apellido ↕</th>
+                        <th>Email</th>
+                        <th style="cursor: pointer;" onclick="ordenarTabla(4)">Edad ↕</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="students-tbody">
+                    <!-- Se cargará dinámicamente con JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
