@@ -2,7 +2,7 @@
   Nombre: Toribio Rosendi
   Curso: 7°3
 */
-const API_URL = "https://backend-api-estudiantes-7tqs.onrender.com";
+const API_URL = "https://backend-api-estudiantes-7tqs.onrender.com/api/students";
 
 const form = document.getElementById("student-form");
 const studentIdInput = document.getElementById("student-id");
